@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import Link from 'next/link';
 import MenuCell from 'components/MenuCell.js';
 import { getMenu } from 'api/menu';
 import styles from './index.module.css';
