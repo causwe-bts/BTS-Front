@@ -1,4 +1,4 @@
-import Cookies from 'universal-cookie';
+import { addToCart } from 'api/menu.js';
 import styles from './[pizza].js';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -20,14 +20,9 @@ export default function DetailMenu() {
   };
 
   function onButtonClick(e) {
-    const cookies = new Cookies();
-    const cart = cookies.get('cart');
-    if (cart === undefined) {
-      cookies.set('cart', '');
-    }
-    const newCart = cookies.get('cart');
-    cookies.set('cart', newCart + `[${id}:${inputs.qua}]`);
-    router.push('/menu');
+    addToCart(id, inputs.qua).then(() => {
+      router.push('/menu');
+    });
   }
 
   return (
