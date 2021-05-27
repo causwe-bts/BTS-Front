@@ -6,7 +6,7 @@ import { useState } from 'react';
 export default function DetailMenu() {
   const router = useRouter();
   const { pizza } = router.query;
-  const { id, name, price, description } = router.query;
+  const { name, price, description } = router.query;
   const [inputs, setInputs] = useState({
     qua: 1,
   });
@@ -20,7 +20,7 @@ export default function DetailMenu() {
   };
 
   function onButtonClick(e) {
-    addToCart(id, inputs.qua).then(() => {
+    addToCart(router.query, inputs.qua).then(() => {
       router.push('/menu');
     });
   }

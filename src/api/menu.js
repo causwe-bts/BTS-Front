@@ -35,7 +35,7 @@ export const getCart = () => {
   });
 };
 
-export const addToCart = (id, qua) => {
+export const addToCart = (menu, qua) => {
   return new Promise((resolve, reject) => {
     const cookies = new Cookies();
     const cart = cookies.get('cart');
@@ -46,7 +46,7 @@ export const addToCart = (id, qua) => {
     const prevCart = newcookies.get('cart');
     const newCart = prevCart.concat([
       {
-        id: id,
+        menu: menu,
         qua: parseInt(qua),
       },
     ]);

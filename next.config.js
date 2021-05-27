@@ -3,7 +3,7 @@ module.exports = {
     return [
       {
         source: '/api/:path*',
-        destination: 'https://localhost/api/:path*', // Proxy to Backend
+        destination: 'https://caupizza.shop/api/:path*', // Proxy to Backend
       },
     ];
   },

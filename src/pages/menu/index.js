@@ -16,6 +16,9 @@ export default function Menu() {
     <div className={styles.container}>
       <div>메뉴 페이지</div>
       <div>
+        <Link href="/cart">장바구니 바로가기</Link>{' '}
+      </div>
+      <div>
         {menus.map((menu) => {
           return <MenuCell menu={menu} className={styles.menu} key={menu.name} />;
         })}
