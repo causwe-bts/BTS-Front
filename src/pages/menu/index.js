@@ -8,9 +8,13 @@ import styles from './index.module.css';
 export default function Menu() {
   const [menus, setMenus] = useState([]);
   useEffect(() => {
-    getMenu().then((resmenus) => {
-      setMenus(resmenus);
-    });
+    getMenu()
+      .then((resmenus) => {
+        setMenus(resmenus);
+      })
+      .catch((err) => {
+        alert(err);
+      });
   }, []);
   return (
     <div className={styles.container}>

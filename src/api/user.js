@@ -1,6 +1,11 @@
 import Cookies from 'universal-cookie';
 import axios from 'axios';
 
+export const token = () => {
+  var cookies = new Cookies();
+  return cookies.get('auth');
+};
+
 export const signin = (username, password) => {
   return new Promise((resolve, reject) => {
     axios({
