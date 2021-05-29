@@ -1,0 +1,12 @@
+.container {
+  max-width: 500px;
+  margin: auto;
+}
+
+.description_box {
+  margin: 5px;
+}
+
+.submit_button {
+  margin-top: 10px;
+}

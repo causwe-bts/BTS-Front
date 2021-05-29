@@ -1,0 +1,11 @@
+.container {
+  margin: auto;
+  max-width: 500px;
+}
+
+.cart_cell {
+  background: lightgray;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: larger;
+}

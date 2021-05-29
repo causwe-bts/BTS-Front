@@ -1,5 +1,5 @@
 import { addToCart } from 'api/menu.js';
-import styles from './[pizza].js';
+import styles from './[pizza].module.css';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
@@ -27,11 +27,21 @@ export default function DetailMenu() {
 
   return (
     <div className={styles.container}>
-      <div>{name}</div>
-      <div>{`가격: ${price}`}</div>
-      <div>{`설명: ${description}`}</div>
-      <input type="number" min="1" max="20" onChange={onChange} value={inputs.qua} name="qua" />
-      <button onClick={onButtonClick}>장바구니 담기</button>
+      <h1>{name}</h1>
+      <div className={styles.description_box}>{`가격: ${price}`}</div>
+      <div className={styles.description_box}>{`설명: ${description}`}</div>
+      <input
+        className="form-control"
+        type="number"
+        min="1"
+        max="20"
+        onChange={onChange}
+        value={inputs.qua}
+        name="qua"
+      />
+      <button className={`btn btn-primary ${styles.submit_button}`} onClick={onButtonClick}>
+        장바구니 담기
+      </button>
     </div>
   );
 }
