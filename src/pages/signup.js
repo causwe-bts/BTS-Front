@@ -37,18 +37,35 @@ export default function Registration() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <div>회원가입</div>
+        <div className={`${styles.form_label}`}>회원가입</div>
         <div>
           <p>
-            <input value={name} onChange={onChangeName} placeholder="name" />
+            <input
+              className={`form-control ${styles.form_input}`}
+              value={name}
+              onChange={onChangeName}
+              placeholder="name"
+            />
           </p>
           <p>
-            <input value={phone} onChange={onChangePhone} placeholder="phone" />
+            <input
+              className={`form-control ${styles.form_input}`}
+              value={phone}
+              onChange={onChangePhone}
+              placeholder="phone"
+            />
           </p>
           <p>
-            <input value={password} onChange={onChangePassword} placeholder="password" />
+            <input
+              className={`form-control ${styles.form_input}`}
+              value={password}
+              onChange={onChangePassword}
+              placeholder="password"
+            />
           </p>
-          <button onClick={onSubmit}>Sign Up</button>
+          <button className="btn btn-primary" onClick={onSubmit}>
+            Sign Up
+          </button>
         </div>
       </div>
     </div>
