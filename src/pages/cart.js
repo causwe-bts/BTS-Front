@@ -8,11 +8,14 @@ export default function Cart() {
 
   useEffect(() => {
     getCart().then((cart) => {
-      setCart(cart);
+      if (cart) {
+        setCart(cart);
+      }
     });
   }, []);
   return (
     <div className={styles.container}>
+      {cart.length === 0 && <div>카트가 비어있습니다</div>}
       {cart.map((singleOrder) => {
         return (
           <div>

@@ -26,3 +26,23 @@ export const signin = (username, password) => {
       });
   });
 };
+
+export const signup = (username, password, phone) => {
+  return new Promise((resolve, reject) => {
+    axios({
+      method: 'post',
+      url: '/api/user/signup',
+      data: {
+        username: username,
+        password: password,
+        phonenumber: phone,
+      },
+    })
+      .then(() => {
+        resolve();
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
+};
