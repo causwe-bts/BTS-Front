@@ -1,14 +1,35 @@
 import Cookies from 'universal-cookie';
 import Head from 'next/head';
 import Router from 'next/router';
+import { signin } from 'api/user';
 import styles from './signin.module.css';
+import { useState } from 'react';
 
 export default function Login() {
+  const [inputs, setInputs] = useState({
+    username: '',
+    password: '',
+  });
+
+  const onChange = (e) => {
+    const { value, name } = e.target;
+    setInputs({
+      ...inputs,
+      [name]: value,
+    });
+  };
+
   function onSubmit(e) {
-    var cookies = new Cookies();
-    cookies.set('auth', 'sample_token');
-    Router.push('/menu');
+    console.log(inputs.username, inputs.password);
+    signin(inputs.username, inputs.password)
+      .then(() => {
+        Router.push('/menu');
+      })
+      .catch((err) => {
+        alert(err);
+      });
   }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -18,8 +39,18 @@ export default function Login() {
       <div>
         <div>Login</div>
         <div>
-          <input placeholder="id" />
-          <input placeholder="password" />
+          <input
+            placeholder="username"
+            name="username"
+            onChange={onChange}
+            value={inputs.username}
+          />
+          <input
+            placeholder="password"
+            name="password"
+            onChange={onChange}
+            value={inputs.password}
+          />
           <button onClick={onSubmit}>Sign In</button>
         </div>
       </div>
