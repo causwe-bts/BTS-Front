@@ -19,12 +19,12 @@ export default function Home() {
         <title>Pizza BTS</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
+      <div className={`${styles.links}`}>
         <Link href="/signin">
-          <button>로그인</button>
+          <button className={`btn btn-primary ${styles.link_button}`}>로그인</button>
         </Link>
         <Link href="/signup">
-          <button>회원가입</button>
+          <button className={`btn btn-primary ${styles.link_button}`}>회원가입</button>
         </Link>
       </div>
     </div>
