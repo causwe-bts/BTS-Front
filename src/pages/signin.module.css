@@ -1,3 +1,17 @@
 .container {
-  background: lightpink;
+  background: white;
+  /* position: fixed; */
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  padding: 30px;
+}
+
+.form_label {
+  font-weight: bold;
+  font-size: larger;
+}
+
+.form_input {
+  margin: 20px 0;
 }

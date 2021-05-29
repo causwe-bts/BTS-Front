@@ -37,21 +37,25 @@ export default function Login() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <div>Login</div>
+        <div className={`${styles.form_label}`}>Login</div>
         <div>
           <input
+            className={`form-control ${styles.form_input}`}
             placeholder="username"
             name="username"
             onChange={onChange}
             value={inputs.username}
           />
           <input
+            className={`form-control ${styles.form_input}`}
             placeholder="password"
             name="password"
             onChange={onChange}
             value={inputs.password}
           />
-          <button onClick={onSubmit}>Sign In</button>
+          <button className="btn btn-primary" onClick={onSubmit}>
+            Sign In
+          </button>
         </div>
       </div>
     </div>
