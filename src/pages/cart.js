@@ -5,6 +5,10 @@ import styles from './cart.module.css';
 
 export default function Cart() {
   const [cart, setCart] = useState([]);
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
 
   useEffect(() => {
     getCart().then((cart) => {
@@ -36,6 +40,19 @@ export default function Cart() {
               return a + b;
             })}
         원
+      </div>
+      <div>
+        <span
+          className={`d-inline-block ${styles.order_button}`}
+          tabIndex="0"
+          data-bs-toggle="tooltip"
+          data-bs-placement="bottom"
+          title="서비스 준비중입니다."
+        >
+          <button className="btn btn-primary" disabled>
+            주문하기
+          </button>
+        </span>
       </div>
     </div>
   );
