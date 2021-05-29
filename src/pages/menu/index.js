@@ -18,9 +18,11 @@ export default function Menu() {
   }, []);
   return (
     <div className={styles.container}>
-      <div>메뉴 페이지</div>
+      <h1>메뉴 페이지</h1>
       <div>
-        <Link href="/cart">장바구니 바로가기</Link>{' '}
+        <Link href="/cart">
+          <button className="btn btn-secondary">장바구니 바로가기</button>
+        </Link>
       </div>
       <div>
         {menus.map((menu) => {

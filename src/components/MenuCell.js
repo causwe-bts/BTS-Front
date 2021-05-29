@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import styles from './MenuCell.module.css';
 
 export default function MenuCell({ menu, className }) {
+  const { name, price, description, imgURL } = menu;
   return (
     <Link
       href={{
@@ -11,9 +12,14 @@ export default function MenuCell({ menu, className }) {
       }}
     >
       <div className={classNames(className, styles.container)}>
-        <div>{menu.name}</div>
-        <div>{menu.price}</div>
-        <div>{menu.description}</div>
+        <div>
+          <img src={imgURL}></img>
+        </div>
+        <div>
+          <h3>{name}</h3>
+          <div>{price}원</div>
+          <div>{description}</div>
+        </div>
       </div>
     </Link>
   );
