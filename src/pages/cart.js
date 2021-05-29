@@ -9,6 +9,7 @@ export default function Cart() {
   useEffect(() => {
     getCart().then((cart) => {
       if (cart) {
+        console.log(cart);
         setCart(cart);
       }
     });
@@ -24,6 +25,18 @@ export default function Cart() {
           </div>
         );
       })}
+      <div>
+        총액 :
+        {cart.length !== 0 &&
+          cart
+            .map((singleOrder) => {
+              return singleOrder.menu.price * singleOrder.qua;
+            })
+            .reduce((a, b) => {
+              return a + b;
+            })}
+        원
+      </div>
     </div>
   );
 }

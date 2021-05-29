@@ -5,6 +5,7 @@
 
 .cart_cell {
   background: lightgray;
+  margin: 5px;
   padding: 10px;
   border-radius: 5px;
   font-size: larger;
