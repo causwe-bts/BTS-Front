@@ -48,6 +48,7 @@ export default function Login() {
           />
           <input
             className={`form-control ${styles.form_input}`}
+            type="password"
             placeholder="password"
             name="password"
             onChange={onChange}
